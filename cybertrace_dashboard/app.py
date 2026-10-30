@@ -11,10 +11,10 @@ from werkzeug.security import check_password_hash, generate_password_hash
 from werkzeug.utils import secure_filename
 
 BASE_DIR = Path(__file__).resolve().parent
-DATA_DIR = BASE_DIR / "data"
+DATA_DIR = Path("/tmp/cybertrace_data")
 PHOTO_DIR = DATA_DIR / "photos"
-DATA_DIR.mkdir(exist_ok=True)
-PHOTO_DIR.mkdir(exist_ok=True)
+DATA_DIR.mkdir(exist_ok=True, parents=True)
+PHOTO_DIR.mkdir(exist_ok=True, parents=True)
 DB_PATH = DATA_DIR / "cybertrace.sqlite3"
 from flask import render_template
 
