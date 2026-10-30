@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="id"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="csrf-token" content="{{ csrf|default('') }}"><title>CyberTrace Education — Belajar Teknologi</title>
+<link rel="stylesheet" href="{{ url_for('static',filename='education.css') }}"></head>
+<body>
+<header class="nav"><a class="brand" href="/"><span class="mark">CT</span><span><b>CyberTrace</b><small>DIGITAL EDUCATION</small></span></a>
+<nav><a class="active" href="/">Beranda</a><a href="/modul">Modul</a><a href="#tentang">Tentang</a></nav><a class="nav-cta" href="/modul">Lihat Modul</a></header>
+<main>
+<section class="hero">
+ <div class="hero-copy"><span class="eyebrow">BELAJAR TEKNOLOGI</span><h1>Mempersiapkan Generasi <em>Cerdas Digital</em></h1>
+ <p>Modul pembelajaran teknologi yang sederhana, menyenangkan, dan siap digunakan oleh guru sekolah dasar.</p>
+ <button id="explore" class="primary">Jelajahi Modul Pembelajaran <span>→</span></button>
+ <p class="consent-note"> <a href="/modul"></a>.</p>
+ <p id="access-status" class="status" role="status" aria-live="polite"></p>
+ </div><div class="hero-art" role="img" aria-label="Ilustrasi komputer di ruang kelas"><div class="screen"></div><div class="person p1"></div><div class="person p2"></div><div class="desk"></div></div>
+</section>
+<section class="intro" id="tentang"><div><span class="eyebrow">UNTUK GURU SD</span><h2>Materi siap pakai untuk kelas 1–6</h2><p>Temukan panduan mengajar, aktivitas siswa, lembar kerja, dan kuis dalam satu tempat.</p></div>
+<div class="stats"><div><b>6</b><span>Tingkat kelas</span></div><div><b>Siap</b><span>Untuk mengajar</span></div><div><b>Praktis</b><span>Aktivitas & LKPD</span></div></div></section>
+<section class="grades"><div class="section-head"><div><span class="eyebrow">MULAI BELAJAR</span><h2>Jelajahi berdasarkan kelas</h2></div><a href="/modul">Semua modul →</a></div>
+<div class="grade-grid">
+<a class="grade g1" href="/modul/kelas-1-teknologi-sekitar-kita"><b>Kelas 1</b><span>Teknologi di sekitar kita</span></a>
+<a class="grade g2" href="/modul/kelas-2-perangkat-digital"><b>Kelas 2</b><span>Mengenal perangkat digital</span></a>
+<a class="grade g3" href="/modul/kelas-3-internet-informasi"><b>Kelas 3</b><span>Internet dan informasi</span></a>
+<a class="grade g4" href="/modul/kelas-4-aman-di-dunia-digital"><b>Kelas 4</b><span>Aman di dunia digital</span></a>
+<a class="grade g5" href="/modul/kelas-5-logika-dan-ai"><b>Kelas 5</b><span>Logika, coding, dan AI</span></a>
+<a class="grade g6" href="/modul/kelas-6-proyek-digital"><b>Kelas 6</b><span>Proyek dan jejak digital</span></a>
+</div></section>
+<section class="about"><h2>Teknologi dipelajari dengan aman dan menyenangkan.</h2><p>Materi dirancang sebagai bahan ajar awal yang dapat disesuaikan guru dengan kebutuhan kelas dan kurikulum sekolah.</p></section>
+</main><footer>© CyberTrace Education · Media belajar literasi digital untuk guru SD</footer>
+<script src="{{ url_for('static',filename='education.js') }}"></script></body></html>

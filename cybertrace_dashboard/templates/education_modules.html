@@ -1,0 +1,12 @@
+<!doctype html><html lang="id"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Modul Pembelajaran — CyberTrace</title><link rel="stylesheet" href="{{ url_for('static',filename='education.css') }}"></head><body>
+<header class="nav"><a class="brand" href="/"><span class="mark">CT</span><span><b>CyberTrace</b><small>DIGITAL EDUCATION</small></span></a><nav><a href="/">Beranda</a><a class="active" href="/modul">Modul</a><a href="/#tentang">Tentang</a></nav><a class="nav-cta" href="/admin">Admin</a></header>
+<main class="page"><span class="eyebrow">PERPUSTAKAAN MATERI</span><h1>Modul Pembelajaran</h1><p class="lead">Pilih tingkat kelas untuk melihat tujuan belajar, panduan mengajar, aktivitas siswa, LKPD, dan kuis.</p>
+<div class="filter-row"><input id="search" type="search" placeholder="Cari topik atau modul…"><select id="grade"><option value="">Semua kelas</option>{% for n in range(1,7) %}<option value="Kelas {{n}}">Kelas {{n}}</option>{% endfor %}</select></div>
+<div class="module-grid" id="module-grid">
+{% for m in modules %}<a class="module-card" data-grade="{{m.grade}}" data-search="{{(m.title ~ ' ' ~ m.topic ~ ' ' ~ m.description)|lower}}" href="/modul/{{m.slug}}"><span class="grade-tag">{{m.grade}}</span><span class="module-icon">✦</span><h2>{{m.title}}</h2><p>{{m.description}}</p><small>{{m.duration}} · {{m.topic}}</small><b class="read-more">Buka modul →</b></a>{% endfor %}
+</div><p id="empty" class="status" hidden>Modul tidak ditemukan.</p></main><footer>© CyberTrace Education</footer>
+<script>
+const q=document.getElementById('search'),g=document.getElementById('grade'),cards=[...document.querySelectorAll('.module-card')],empty=document.getElementById('empty');
+function filter(){let count=0;cards.forEach(c=>{let ok=(!g.value||c.dataset.grade===g.value)&&c.dataset.search.includes(q.value.toLowerCase());c.hidden=!ok;if(ok)count++});empty.hidden=!!count}
+q.addEventListener('input',filter);g.addEventListener('change',filter);
+</script></body></html>
