@@ -1,0 +1,14 @@
+Gambar pada halaman beranda:
+- “Phi-collage.jpg” oleh kontributor Wikimedia Commons, lisensi Creative Commons Attribution-ShareAlike (CC BY-SA). Sumber: https://commons.wikimedia.org/wiki/File:Phi-collage.jpg
+- “Socrates, Plato and Aristotle.jpg” oleh S. Perquin, lisensi Creative Commons Attribution-ShareAlike 4.0. Sumber: https://commons.wikimedia.org/wiki/File:Socrates,_Plato_and_Aristotle.jpg
+
+Gambar dimuat dari Wikimedia Commons. Jika ingin situs berjalan tanpa koneksi eksternal, unduh gambar dan simpan sebagai aset lokal dengan tetap menyertakan atribusi dan ketentuan lisensinya.
+
+Perbaikan gambar: URL gambar diperbarui menggunakan Special:FilePath Wikimedia Commons agar mengikuti lokasi file yang aktif.
+
+
+Portrait cards updated:
+- Socrates: Socratesportraithead.jpg, Wikimedia Commons (CC BY 4.0).
+- Plato: Portrait of Plato; bust. Wellcome M0005618.jpg, Wikimedia Commons (CC BY 4.0).
+- Friedrich Nietzsche: Portrait Bust of Friedrich Nietzsche (SM sgp1).png, Wikimedia Commons (Public Domain Mark).
+Images are referenced through Wikimedia Commons Special:FilePath redirects.

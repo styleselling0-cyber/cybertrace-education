@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 720">
+<defs><linearGradient id="wall" x2="0" y2="1"><stop stop-color="#85745b"/><stop offset="1" stop-color="#252a2d"/></linearGradient><linearGradient id="floor" x2="0" y2="1"><stop stop-color="#b99b66" stop-opacity=".25"/><stop offset="1" stop-color="#151a1e"/></linearGradient></defs>
+<rect width="1200" height="720" fill="#20272c"/><path d="M0 0H1200V500H0Z" fill="url(#wall)"/>
+<path d="M0 0L600 105 1200 0V90L600 190 0 90Z" fill="#c4a875" opacity=".55"/>
+<path d="M70 0V490 M260 0V490 M940 0V490 M1130 0V490" stroke="#d8c49d" stroke-width="34" opacity=".75"/>
+<path d="M35 0V490 M295 0V490 M905 0V490 M1165 0V490" stroke="#51483a" stroke-width="8"/>
+<path d="M0 500L600 370 1200 500V720H0Z" fill="url(#floor)"/>
+<path d="M0 500H1200 M120 570H1080 M260 640H940" stroke="#c5a66c" stroke-opacity=".35" stroke-width="4"/>
+<g fill="#d9c9aa" stroke="#5b5143" stroke-width="8">
+<circle cx="600" cy="260" r="65"/><path d="M490 500Q490 345 600 335Q710 345 710 500Z"/>
+<circle cx="420" cy="320" r="49"/><path d="M340 520Q345 400 420 395Q500 400 505 520Z"/>
+<circle cx="790" cy="330" r="48"/><path d="M710 530Q715 410 790 405Q870 410 875 530Z"/>
+<circle cx="235" cy="390" r="42"/><path d="M165 560Q170 460 235 455Q300 460 305 560Z"/>
+<circle cx="970" cy="390" r="42"/><path d="M900 560Q905 460 970 455Q1035 460 1040 560Z"/>
+</g>
+<g stroke="#b99b66" stroke-width="7" fill="none" opacity=".8"><path d="M450 235Q600 140 750 235"/><path d="M520 175Q600 100 680 175"/></g>
+<rect width="1200" height="720" fill="#101519" opacity=".18"/>
+<text x="52" y="62" fill="#f0d49b" font-family="Georgia,serif" font-size="30" letter-spacing="6">THE SCHOOL OF ATHENS</text>
+<text x="54" y="680" fill="#e3d5bb" font-family="Arial,sans-serif" font-size="20" letter-spacing="4">IDEAS · DIALOGUE · HUMANITY</text>
+</svg>

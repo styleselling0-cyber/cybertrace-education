@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="id"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="csrf-token" content="{{ csrf|default('') }}"><title>CyberTrace — Ruang Belajar Filsafat</title>
+<link rel="stylesheet" href="{{ url_for('static',filename='education.css') }}"></head>
+<body>
+<header class="nav nav-brand-only"><a class="brand" href="/"><span class="mark">CT</span><span><b>CyberTrace</b><small>PHILOSOPHY & CRITICAL THINKING</small></span></a></header>
+<main>
+<section class="hero hero-philosophy">
+ <div class="hero-copy">
+  <span class="eyebrow">PHILOSOPHY · IDEAS · HUMANITY</span>
+  <h1>Berani Bertanya.<br><em>Berpikir Lebih Dalam.</em></h1>
+  <p>Jelajahi warisan pemikiran para filsuf—dari dialog Socrates, dunia gagasan Plato, etika Aristoteles, hingga kegelisahan Nietzsche. Bukan sekadar membaca teori, tetapi menguji cara kita memahami diri dan dunia.</p>
+  <button id="explore" class="primary">Jelajahi Modul Filsafat <span>→</span></button>
+  <p class="consent-note">Ruang belajar mandiri untuk rasa ingin tahu, nalar kritis, dan refleksi kehidupan.</p>
+  <p id="access-status" class="status" role="status" aria-live="polite"></p>
+ </div>
+ <div class="philosopher-gallery" aria-label="Galeri potret para pemikir">
+  <div class="gallery-main">
+   <img src="https://upload.wikimedia.org/wikipedia/commons/f/fd/Phi-collage.jpg" alt="Kolase potret Plato, Immanuel Kant, Confucius, Nietzsche, Descartes, dan para pemikir lainnya">
+   <div class="gallery-overlay"><span>THE GREAT THINKERS</span><b>Jejak gagasan<br>lintas zaman</b></div>
+  </div>
+  <div class="portrait-row">
+   <figure class="portrait-card socrates"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Socratesportraithead.jpg" alt="Patung dada Socrates"><figcaption><b>Socrates</b><small>Seni bertanya</small></figcaption></figure>
+   <figure class="portrait-card plato"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Portrait_of_Plato%3B_bust._Wellcome_M0005618.jpg" alt="Patung dada Plato" loading="eager" referrerpolicy="no-referrer"><figcaption><b>Plato</b><small>Dunia gagasan</small></figcaption></figure>
+   <figure class="portrait-card nietzsche"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Portrait_Bust_of_Friedrich_Nietzsche_%28SM_sgp1%29.png" alt="Patung dada Friedrich Nietzsche" loading="eager" referrerpolicy="no-referrer"><figcaption><b>Nietzsche</b><small>Nilai & makna</small></figcaption></figure>
+  </div>
+  <div class="gallery-note">A HISTORY OF QUESTIONS <span>01 — 26</span></div>
+ </div>
+</section>
+<section class="intro" id="tentang"><div><span class="eyebrow">UNTUK PEMBELAJAR SEPANJANG HAYAT</span><h2>Gagasan untuk dipikirkan lebih dalam</h2><p>Temukan pengantar konsep, latihan refleksi, studi kasus, lembar kerja, dan kuis untuk menguji pemahaman.</p></div>
+<div class="stats"><div><b>6</b><span>Bidang kajian</span></div><div><b>Kritis</b><span>Untuk bernalar</span></div><div><b>Reflektif</b><span>Latihan & diskusi</span></div></div></section>
+
+</main><footer>© CYBERTRACE · Ruang belajar filsafat, logika, dan pemikiran kritis</footer>
+<script src="{{ url_for('static',filename='education.js') }}"></script></body></html>

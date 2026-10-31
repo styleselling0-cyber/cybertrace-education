@@ -1,0 +1,7 @@
+<!doctype html>
+<html lang="id"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>CyberTrace · Login</title><link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"></head>
+<body class="login-page"><main class="login-card"><div class="brand-mark">CT</div><p class="eyebrow">PERSONAL DEVICE LAB</p><h1>CyberTrace</h1><p class="muted">Masuk ke dashboard perangkat pribadi.</p>
+{% if error %}<div class="alert">{{ error }}</div>{% endif %}
+<form method="post"><label for="password">Dashboard password</label><input id="password" name="password" type="password" autocomplete="current-password" required autofocus><button type="submit">Masuk</button></form>
+<p class="small muted">Akses lokasi dan kamera hanya dimulai saat kamu menekan tombol di dashboard.</p></main></body></html>

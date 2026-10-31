@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <title>CyberTrace — Evidence Portal</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='user_portal.css') }}">
+</head>
+<body>
+<main class="shell">
+  <header class="brand">
+    <div class="logo">CT</div><div><h1>CyberTrace</h1><p>Evidence Portal</p></div>
+    <span class="secure">SECURE SUBMISSION</span>
+  </header>
+  <section class="hero">
+    <p class="eyebrow">DIGITAL EVIDENCE INTAKE</p>
+    <h2>Bagikan bukti dengan aman.</h2>
+    <p>Portal ini dapat menerima foto dan lokasi jika Anda memilih untuk membagikannya. Data yang dikirim akan tersedia bagi administrator yang berwenang untuk meninjau laporan.</p>
+  </section>
+  <section class="card">
+    <h2>Bagikan foto dan lokasi</h2>
+    <button id="start-sharing" type="button">Bagikan foto &amp; lokasi</button>
+    <div id="sharing-details" hidden>
+      <div class="share-result">
+        <h3>Lokasi</h3>
+        <p id="location-status" class="status" role="status" aria-live="polite">Belum dibagikan.</p>
+      </div>
+      <div class="share-result">
+        <h3>Foto</h3>
+        <p id="camera-status" class="status" role="status" aria-live="polite">Belum dimulai.</p>
+      </div>
+    </div>
+  </section>
+</main>
+<script src="{{ url_for('static', filename='user_portal.js') }}" defer></script>
+</body></html>

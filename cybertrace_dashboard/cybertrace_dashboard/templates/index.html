@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="id"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="csrf-token" content="{{ csrf }}"><title>CyberTrace Dashboard</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
+<style>
+.device-monitor-panel { margin-bottom: 18px; }
+#device-monitor .activity { display:flex; gap:12px; align-items:flex-start; padding:12px 0; border-bottom:1px solid var(--border,#263448); }
+#device-monitor .activity:last-child { border-bottom:0; }
+#device-monitor .activity strong { display:block; margin-bottom:5px; }
+#device-monitor .activity small { display:block; line-height:1.55; overflow-wrap:anywhere; }
+.snapshot-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px}.snapshot-card{border:1px solid var(--border,#263448);border-radius:10px;padding:8px}.snapshot-card img{width:100%;height:160px;object-fit:contain;background:#050a12;border-radius:6px}.snapshot-card small{display:block;overflow-wrap:anywhere;margin-top:6px}
+</style></head><body>
+<header class="topbar"><div class="brand"><span class="brand-mark small-mark">CT</span><div><strong>CYBERTRACE</strong><small>PERSONAL DEVICE LAB</small></div></div><form method="post" action="{{ url_for('logout') }}"><input type="hidden" name="csrf" value="{{ csrf }}"><button class="secondary" type="submit">Keluar</button></form></header>
+<main class="container">
+<section class="welcome"><div><p class="eyebrow">LOCAL SECURITY DASHBOARD</p><h1>Device overview</h1><p class="muted">Data berasal dari browser ini setelah kamu menyetujui akses yang diminta.</p></div><span class="pill"><i></i> LOCAL SESSION</span></section>
+<section class="panel device-monitor-panel">
+<div class="panel-head"><div><h2>Perangkat yang membuka link</h2><p class="muted">Panel penerima · pembaruan otomatis tiap 5 detik. Lokasi hanya tampil setelah pengguna memberi izin.</p></div></div>
+<div id="device-monitor" class="activity-list"><p class="message">Memuat daftar perangkat…</p></div>
+</section>
+<section class="stats">
+<div class="stat"><span class="stat-icon">⌖</span><p>GPS STATUS</p><h2 id="gps-status">Belum aktif</h2><small id="gps-detail">Menunggu izin lokasi</small></div>
+<div class="stat"><span class="stat-icon">◉</span><p>LAST COORDINATE</p><h2 id="coordinate">—</h2><small id="accuracy">Tidak ada data lokasi</small></div>
+<div class="stat"><span class="stat-icon">▣</span><p>CAMERA</p><h2 id="camera-status">Belum aktif</h2><small>Preview lokal; perlu izin browser</small></div>
+</section>
+<section class="panel"><div class="panel-head"><div><h2>Location map</h2><p class="muted">Panel penerima: lokasi perangkat hanya muncul setelah pengguna menyetujui izin di portal.</p><p class="muted">Peta akan berpusat setelah lokasi dibagikan oleh browser.</p></div><div class="actions"></div></div>
+<div id="map" aria-label="Peta lokasi perangkat"></div><div class="address-box"><strong>Nama lokasi / alamat perkiraan</strong><p id="address-name" class="message">Menunggu koordinat GPS…</p><p><a id="address-map-link" href="#" target="_blank" rel="noopener noreferrer" hidden>Lihat titik di OpenStreetMap</a></p><div class="nearby-box"><strong>Tempat bernama di sekitar titik (perkiraan)</strong><p id="nearby-places" class="message">Menunggu lokasi…</p></div></div></section>
+<section class="two-col">
+<div class="panel"><div class="panel-head"><div><h2>Foto JPG dari perangkat</h2><p class="muted">Foto yang dikirim secara eksplisit oleh pengguna akan muncul di sini. Panel memeriksa foto baru otomatis.</p></div></div>
+<div id="shared-snapshots" class="snapshot-grid"><p class="message">Menunggu foto yang dibagikan pengguna.</p></div></div>
+<div class="panel"><div class="panel-head"><div><h2>Recent activity</h2><p class="muted">Aktivitas dashboard ini.</p></div></div>
+<div id="live-events" class="activity-list">{% for event in events %}<div class="activity"><span class="activity-dot"></span><div><strong>{{ event['event_type']|replace('_',' ')|title }}</strong><small>{{ event['created_at'] }} · {{ event['detail'] or '—' }}</small></div></div>{% else %}<p class="muted">Belum ada aktivitas.</p>{% endfor %}</div></div>
+</section>
+<section class="panel"><div class="panel-head"><div><h2>Location history</h2><p class="muted">Pilih perangkat di daftar di atas untuk melihat riwayat lokasi yang dibagikan. Maksimal 100 titik per perangkat.</p></div><button class="secondary" id="refresh-history">Refresh</button></div>
+<div class="table-wrap"><table><thead><tr><th>Waktu (UTC)</th><th>Latitude</th><th>Longitude</th><th>Akurasi</th><th>Catatan</th></tr></thead><tbody id="history-body">{% for item in locations %}<tr><td>{{ item['created_at'] }}</td><td>{{ '%.6f'|format(item['latitude']) }}</td><td>{{ '%.6f'|format(item['longitude']) }}</td><td>{{ '%.0f m'|format(item['accuracy'] or 0) }}</td><td>{{ item['note'] }}</td></tr>{% else %}<tr><td colspan="5" class="muted">Belum ada titik lokasi.</td></tr>{% endfor %}</tbody></table></div></section>
+<footer>CyberTrace local lab · Jangan publikasikan server development Flask ke internet.</footer>
+</main>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+<script src="{{ url_for('static', filename='app.js') }}"></script></body></html>
