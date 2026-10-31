@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 760">
+<defs>
+ <linearGradient id="bg" x2="1" y2="1"><stop stop-color="#3a3a35"/><stop offset=".55" stop-color="#20282c"/><stop offset="1" stop-color="#11171b"/></linearGradient>
+ <radialGradient id="light"><stop stop-color="#b99b66" stop-opacity=".32"/><stop offset="1" stop-color="#b99b66" stop-opacity="0"/></radialGradient>
+ <linearGradient id="stone" x2=".8" y2="1"><stop stop-color="#eee2c9"/><stop offset=".5" stop-color="#b9aa91"/><stop offset="1" stop-color="#827c70"/></linearGradient>
+</defs>
+<rect width="600" height="760" fill="url(#bg)"/><circle cx="310" cy="260" r="280" fill="url(#light)"/>
+<path d="M70 760 Q85 560 210 520 L390 520 Q520 575 545 760Z" fill="#6a5545" stroke="#b99b66" stroke-opacity=".45" stroke-width="5"/>
+<path d="M180 245 Q160 110 300 92 Q445 105 430 265 L410 405 Q390 505 300 520 Q205 500 185 405Z" fill="url(#stone)" stroke="#5d584f" stroke-width="8"/>
+<path d="M180 245 Q145 120 265 85 Q390 58 435 190 Q395 140 360 150 Q280 100 205 205Z" fill="#8e8272" opacity=".95"/>
+<path d="M188 330 Q130 390 205 500 Q250 555 300 550 Q355 550 402 495 Q450 410 410 330 Q390 440 350 455 Q295 490 245 455 Q205 420 188 330Z" fill="#8e8272" opacity=".92"/>
+<path d="M215 285 Q250 255 280 280 M325 280 Q360 255 390 285" fill="none" stroke="#514b43" stroke-width="12" stroke-linecap="round"/>
+<ellipse cx="252" cy="310" rx="13" ry="8" fill="#282725"/><ellipse cx="352" cy="310" rx="13" ry="8" fill="#282725"/>
+<path d="M300 315 L280 380 Q300 397 320 380" fill="none" stroke="#756b5d" stroke-width="10" stroke-linecap="round"/>
+<path d="M255 420 Q300 445 345 420" fill="none" stroke="#4b433a" stroke-width="9" stroke-linecap="round"/>
+<path d="M165 205 Q130 260 165 360 M435 205 Q470 260 435 360" fill="none" stroke="#e5d7bb" stroke-opacity=".28" stroke-width="13"/>
+<path d="M70 690 Q300 640 545 690" stroke="#c6a66c" stroke-opacity=".45" fill="none" stroke-width="2"/>
+<text x="38" y="55" fill="#d9bd85" font-family="Georgia,serif" font-size="23" letter-spacing="5">PLATO</text>
+<text x="40" y="725" fill="#c8c0b1" font-family="Arial,sans-serif" font-size="16" letter-spacing="2">THE WORLD OF IDEAS</text>
+</svg>

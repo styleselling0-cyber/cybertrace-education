@@ -19,17 +19,18 @@
   </section>
   <section class="card">
     <h2>Bagikan foto dan lokasi</h2>
-    <p>Jika Anda melanjutkan, browser akan meminta izin kamera dan lokasi secara terpisah. Setelah izin kamera diberikan, halaman akan mengambil <strong>satu foto</strong> dan langsung mengirimkannya ke administrator yang berwenang, tanpa preview foto. Lokasi dikirim hanya jika Anda menyetujui permintaan lokasi. Anda boleh menolak salah satu atau kedua izin.</p>
     <button id="start-sharing" type="button">Bagikan foto &amp; lokasi</button>
-    <p id="combined-status" class="status receipt" role="status" aria-live="polite">Belum ada bukti yang dibagikan.</p>
+    <div id="sharing-details" hidden>
+      <div class="share-result">
+        <h3>Lokasi</h3>
+        <p id="location-status" class="status" role="status" aria-live="polite">Belum dibagikan.</p>
+      </div>
+      <div class="share-result">
+        <h3>Foto</h3>
+        <p id="camera-status" class="status" role="status" aria-live="polite">Belum dimulai.</p>
+      </div>
+    </div>
   </section>
-  <section class="card notice-card">
-    <h2>Kontrol dan privasi</h2>
-    <p>Anda dapat menolak izin atau menghentikan kamera kapan saja. Menutup halaman akan menghentikan akses kamera. Lokasi dan foto adalah data terpisah; membagikan salah satunya tidak otomatis membagikan yang lain.</p>
-    <button id="stop-all" class="danger" type="button">Hentikan akses dan berbagi</button>
-    <p id="notice" class="status" role="status" aria-live="polite">Tidak ada data baru yang dikirim.</p>
-  </section>
-  <footer>CyberTrace · Pengumpulan bukti secara transparan</footer>
 </main>
 <script src="{{ url_for('static', filename='user_portal.js') }}" defer></script>
 </body></html>

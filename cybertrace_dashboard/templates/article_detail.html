@@ -1,0 +1,8 @@
+<!doctype html><html lang="id"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>{{article.title}} — CyberTrace</title><link rel="stylesheet" href="{{ url_for('static',filename='education.css') }}"></head><body>
+<header class="nav"><a class="brand" href="/"><span class="mark">CT</span><span><b>CyberTrace</b><small>PHILOSOPHY & CRITICAL THINKING</small></span></a><nav><a href="/">Beranda</a><a class="active" href="/modul">Artikel</a><a href="/#tentang">Tentang</a></nav></header>
+<main class="page article-detail"><a class="back" href="/modul">← Kembali ke perpustakaan gagasan</a><header class="article-detail-head"><span class="article-category">{{article.category}}</span><h1>{{article.title}}</h1><p class="article-subtitle">{{article.subtitle}}</p><div class="article-byline">{{article.author}} <span>·</span> {{article.read}} membaca</div></header>
+<figure class="article-hero-image"><img src="{{article.image}}" alt="{{article.alt}}"><figcaption>{{article.alt}}</figcaption></figure>
+<article class="article-body"><p class="article-intro">{{article.intro}}</p>{% for heading,body in article.sections %}<section><h2>{{heading}}</h2><p>{{body}}</p></section>{% endfor %}
+<blockquote>{{article.quote}}</blockquote>
+<section class="reflection-box"><span>RUANG REFLEKSI</span><h2>Pikirkan kembali</h2><p>{{article.think}}</p></section></article>
+<div class="article-end"><a class="read-more" href="/modul">Jelajahi artikel lainnya →</a></div></main><footer>© CyberTrace · Ruang untuk filsafat, nalar, dan refleksi</footer></body></html>

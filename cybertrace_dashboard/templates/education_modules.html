@@ -1,12 +1,26 @@
-<!doctype html><html lang="id"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Modul Pembelajaran — CyberTrace</title><link rel="stylesheet" href="{{ url_for('static',filename='education.css') }}"></head><body>
-<header class="nav"><a class="brand" href="/"><span class="mark">CT</span><span><b>CyberTrace</b><small>DIGITAL EDUCATION</small></span></a><nav><a href="/">Beranda</a><a class="active" href="/modul">Modul</a><a href="/#tentang">Tentang</a></nav><a class="nav-cta" href="/admin">Admin</a></header>
-<main class="page"><span class="eyebrow">PERPUSTAKAAN MATERI</span><h1>Modul Pembelajaran</h1><p class="lead">Pilih tingkat kelas untuk melihat tujuan belajar, panduan mengajar, aktivitas siswa, LKPD, dan kuis.</p>
-<div class="filter-row"><input id="search" type="search" placeholder="Cari topik atau modul…"><select id="grade"><option value="">Semua kelas</option>{% for n in range(1,7) %}<option value="Kelas {{n}}">Kelas {{n}}</option>{% endfor %}</select></div>
-<div class="module-grid" id="module-grid">
-{% for m in modules %}<a class="module-card" data-grade="{{m.grade}}" data-search="{{(m.title ~ ' ' ~ m.topic ~ ' ' ~ m.description)|lower}}" href="/modul/{{m.slug}}"><span class="grade-tag">{{m.grade}}</span><span class="module-icon">✦</span><h2>{{m.title}}</h2><p>{{m.description}}</p><small>{{m.duration}} · {{m.topic}}</small><b class="read-more">Buka modul →</b></a>{% endfor %}
-</div><p id="empty" class="status" hidden>Modul tidak ditemukan.</p></main><footer>© CyberTrace Education</footer>
+<!doctype html><html lang="id"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Perpustakaan Gagasan — CyberTrace</title><link rel="stylesheet" href="{{ url_for('static',filename='education.css') }}"></head><body>
+<header class="nav"><a class="brand" href="/"><span class="mark">CT</span><span><b>CyberTrace</b><small>PHILOSOPHY & CRITICAL THINKING</small></span></a><nav><a href="/">Beranda</a><a class="active" href="/modul">Artikel</a><a href="/#tentang">Tentang</a></nav><a class="nav-cta" href="/admin">Admin</a></header>
+<main class="page editorial-page">
+<section class="editorial-heading"><span class="eyebrow">PERPUSTAKAAN GAGASAN</span><h1>Menjelajahi Filsafat,<br><em>Memahami Kehidupan.</em></h1><p class="lead">Tulisan untuk menyelami pertanyaan besar, mengenal para pemikir, dan menguji kembali cara kita memandang dunia.</p></section>
+<section class="featured-article">
+<a class="featured-image" href="/artikel/{{articles[0].slug}}"><img src="{{articles[0].image}}" alt="{{articles[0].alt}}"><span class="image-caption">IDEAS THAT SHAPE HUMANITY</span></a>
+<div class="featured-copy"><span class="article-category">{{articles[0].category}}</span><span class="reading-time">{{articles[0].read}} membaca</span><h2><a href="/artikel/{{articles[0].slug}}">{{articles[0].title}}</a></h2><p>{{articles[0].subtitle}}</p><a class="read-more" href="/artikel/{{articles[0].slug}}">Baca artikel utama <span>→</span></a></div>
+</section>
+<section class="thinkers-section"><div class="editorial-section-head"><div><span class="eyebrow">JEJAK PARA PEMIKIR</span><h2>Berkenalan dengan para filsuf</h2></div><p>Gagasan besar lahir dari keberanian melihat dunia dengan cara berbeda.</p></div>
+<div class="thinker-strip">
+<a class="thinker" href="/artikel/socrates-seni-mengajukan-pertanyaan"><img src="https://upload.wikimedia.org/wikipedia/commons/4/4a/Socrates%2C_Plato_and_Aristotle.jpg" alt="Patung Socrates"><span><b>Socrates</b><small>Seni bertanya</small></span></a>
+<a class="thinker" href="/artikel/plato-dunia-ide-dan-bayang-bayang"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Phi-collage.jpg" alt="Kolase para filsuf"><span><b>Plato</b><small>Dunia gagasan</small></span></a>
+<a class="thinker" href="/artikel/aristoteles-etika-hidup-baik"><img src="https://upload.wikimedia.org/wikipedia/commons/4/4a/Socrates%2C_Plato_and_Aristotle.jpg" alt="Patung Aristoteles"><span><b>Aristoteles</b><small>Etika dan kebajikan</small></span></a>
+<a class="thinker" href="/artikel/nietzsche-makna-dan-nilai-hidup"><img src="https://upload.wikimedia.org/wikipedia/commons/1/1b/Nietzsche187a.jpg" alt="Friedrich Nietzsche"><span><b>Nietzsche</b><small>Nilai dan makna</small></span></a>
+<a class="thinker" href="/artikel/kebebasan-dan-tanggung-jawab"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Jean-Paul_Sartre_in_Venice_%28crop%29.jpg" alt="Jean-Paul Sartre"><span><b>J. P. Sartre</b><small>Kebebasan manusia</small></span></a>
+</div></section>
+<section class="article-library"><div class="editorial-section-head"><div><span class="eyebrow">BACAAN PILIHAN</span><h2>Gagasan yang layak direnungkan</h2></div><p>Temukan sudut pandang, bukan sekadar jawaban instan.</p></div>
+<div class="article-tools"><input id="search" type="search" placeholder="Cari filsuf, gagasan, atau topik…"><select id="grade"><option value="">Semua tema</option>{% for a in articles %}<option value="{{a.category}}">{{a.category}}</option>{% endfor %}</select></div>
+<div class="article-grid" id="article-grid">{% for a in articles[1:] %}<a class="article-card" data-grade="{{a.category}}" data-search="{{(a.title ~ ' ' ~ a.subtitle ~ ' ' ~ a.category ~ ' ' ~ a.author)|lower}}" href="/artikel/{{a.slug}}"><div class="article-card-image"><img src="{{a.image}}" alt="{{a.alt}}" loading="lazy"><span>{{a.category}}</span></div><div class="article-card-copy"><small>{{a.read}} membaca</small><h3>{{a.title}}</h3><p>{{a.subtitle}}</p><b class="read-more">Baca selengkapnya →</b></div></a>{% endfor %}</div><p id="empty" class="status" hidden>Artikel tidak ditemukan. Coba kata kunci lain.</p>
+</section><section class="closing-thought"><span>SEBUAH PERTANYAAN UNTUK DIBAWA PULANG</span><p>“Jangan hanya bertanya apa yang harus dipikirkan. Tanyakan juga mengapa kamu mempercayainya.”</p></section>
+</main><footer>© CyberTrace · Ruang untuk filsafat, nalar, dan refleksi</footer>
 <script>
-const q=document.getElementById('search'),g=document.getElementById('grade'),cards=[...document.querySelectorAll('.module-card')],empty=document.getElementById('empty');
-function filter(){let count=0;cards.forEach(c=>{let ok=(!g.value||c.dataset.grade===g.value)&&c.dataset.search.includes(q.value.toLowerCase());c.hidden=!ok;if(ok)count++});empty.hidden=!!count}
+const q=document.getElementById('search'),g=document.getElementById('grade'),cards=[...document.querySelectorAll('.article-card')],empty=document.getElementById('empty');
+function filter(){let n=0;cards.forEach(c=>{const ok=(!g.value||c.dataset.grade===g.value)&&(c.dataset.search||'').includes(q.value.toLowerCase());c.hidden=!ok;if(ok)n++});empty.hidden=!!n}
 q.addEventListener('input',filter);g.addEventListener('change',filter);
 </script></body></html>
